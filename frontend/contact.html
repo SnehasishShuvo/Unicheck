@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Login</title>
+      <!-- Add your existing CSS links -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+   </head>
+   <body>
+      <!-- Header Section -->
+      <div class="header_section animate__animated animate__fadeIn">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-glass">
+               <div class="container">
+                  <a class="navbar-brand d-flex align-items-center animate__animated animate__slideInLeft" href="index.html">
+                     <img src="./images/Admission logo.jpeg" alt="UniCheck Logo" class="img-fluid logo-hover" style="max-height: 45px; transition: transform 0.3s;">
+                     <span class="ms-2 brand-text" style="font-size: 1.5rem; background: linear-gradient(45deg, #2563eb, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">UniCheck</span>
+                  </a>
+                  <button class="navbar-toggler animate__animated animate__fadeIn custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse animate__animated animate__fadeIn" id="navbarSupportedContent">
+                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.1s;">
+                           <a class="nav-link active nav-link-hover" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.2s;">
+                           <a class="nav-link nav-link-hover" href="about.html">Check Eligibility</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.3s;">
+                           <a class="nav-link nav-link-hover" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.4s;">
+                           <a class="nav-link nav-link-hover" href="http://localhost/final%20login/register.php">Sign-up</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.5s;">
+                           <a class="nav-link nav-link-hover" href="http://localhost/final%20login/login.php">Log-in</a>
+                        </li>
+                     </ul>
+                     <div class="d-flex align-items-center animate__animated animate__slideInRight">
+                        <a href="#" class="btn btn-primary btn-glow contact-btn" style="background: linear-gradient(45deg, #2563eb, #3b82f6); border-radius: 25px; padding: 10px 25px;">
+                           <i class="fa fa-phone me-2 animate__animated animate__tada animate__infinite"></i>
+                           <span class="contact-text">Call: +1234567890</span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+      </div>
+
+      <!-- Login Form -->
+      <div class="container py-5">
+         <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+               <div class="card shadow-sm">
+                  <div class="card-body p-4">
+                     <h2 class="text-center mb-4">Login</h2>
+                     <form action="login.php" method="POST">
+                        <div class="mb-3">
+                           <label for="email" class="form-label">Email</label>
+                           <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-4">
+                           <label for="password" class="form-label">Password</label>
+                           <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                           <button type="submit" class="btn btn-primary">Login</button>
+                           <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                     </form>
+                     <p class="text-center mt-4">
+                        Don't have an account? <a href="client.html" class="text-primary">Sign up here</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- Footer -->
+      <div class="copyright_section mt-5">
+         <div class="container">
+            <p class="copyright_text text-center mb-0">© Team ASP</p>
+         </div>
+      </div>
+
+      <!-- JS Files -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+   </body>
+</html>

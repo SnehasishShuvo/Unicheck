@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Services - UniCheck</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/Admission logo.jpeg" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+      <!-- Font Awesome 5 -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <!-- Animate.css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+      <!-- Custom Animations -->
+      <link rel="stylesheet" href="css/animations.css">
+      <style>
+        /* Custom CSS for Services Page */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1d4ed8;
+            --accent-color: #3b82f6;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(45deg, #1d4ed8 0%, #2563eb 100%);
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-hero {
+            background: var(--gradient-primary);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            margin-top: 76px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            background: white;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            background: rgba(37, 99, 235, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            background: rgba(37, 99, 235, 0.12);
+        }
+        
+        .service-icon i {
+            color: var(--primary-color);
+        }
+        
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-right: 1rem;
+            background: rgba(37, 99, 235, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1rem 0.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .testimonial-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.02);
+            border-color: var(--primary-color);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .pricing-header {
+            padding: 2rem;
+            background: var(--gradient-secondary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+        }
+        
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+            color: var(--dark-color);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .text-success {
+            color: var(--success-color) !important;
+        }
+
+        .text-warning {
+            color: var(--warning-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .bg-success {
+            background-color: var(--success-color) !important;
+        }
+
+        .bg-warning {
+            background-color: var(--warning-color) !important;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .call-to-action {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            color: var(--dark-color);
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero {
+                min-height: 250px;
+                text-align: center;
+            }
+            
+            .service-card {
+                margin-bottom: 2rem;
+            }
+            
+            .pricing-card {
+                margin-bottom: 2rem;
+            }
+            
+            .testimonial-card {
+                margin: 1rem 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .feature-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+      </style>
+   </head>
+   <body>
+      <!-- Header Section -->
+      <div class="header_section animate__animated animate__fadeIn">
+        <div class="container-fluid">
+           <nav class="navbar navbar-expand-lg navbar-light bg-glass">
+              <div class="container">
+                 <a class="navbar-brand d-flex align-items-center animate__animated animate__slideInLeft" href="index.html">
+                    <img src="./images/Admission logo.jpeg" alt="UniCheck Logo" class="img-fluid logo-hover" style="max-height: 45px; transition: transform 0.3s;">
+                    <span class="ms-2 brand-text" style="font-size: 1.5rem; background: linear-gradient(45deg, #2563eb, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">UniCheck</span>
+                 </a>
+                 <button class="navbar-toggler animate__animated animate__fadeIn custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div class="collapse navbar-collapse animate__animated animate__fadeIn" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                       <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.1s;">
+                          <a class="nav-link active nav-link-hover" href="index.html">Home</a>
+                       </li>
+                       <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.2s;">
+                          <a class="nav-link nav-link-hover" href="about.html">Check Eligibility</a>
+                       </li>
+                       <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.3s;">
+                          <a class="nav-link nav-link-hover" href="services.html">Services</a>
+                       </li>
+                       <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.4s;">
+                          <a class="nav-link nav-link-hover" href="http://localhost/final%20login/register.php">Sign-up</a>
+                       </li>
+                       <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.5s;">
+                          <a class="nav-link nav-link-hover" href="http://localhost/final%20login/login.php">Log-in</a>
+                       </li>
+                    </ul>
+                    <div class="d-flex align-items-center animate__animated animate__slideInRight">
+                       <a href="#" class="btn btn-primary btn-glow contact-btn" style="background: linear-gradient(45deg, #2563eb, #3b82f6); border-radius: 25px; padding: 10px 25px;">
+                          <i class="fa fa-phone me-2 animate__animated animate__tada animate__infinite"></i>
+                          <span class="contact-text">Call: +1234567890</span>
+                       </a>
+                    </div>
+                 </div>
+              </div>
+           </nav>
+        </div>
+     </div>
+      <!-- Hero Section -->
+      <section class="service-hero text-white">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-lg-6 animate-slide">
+                      <h1 class="display-4 fw-bold mb-4 hero-typing" data-text="Our Services">Our Services</h1>
+                      <p class="lead mb-4">Comprehensive support for your university admission journey</p>
+                      <a href="#services" class="btn btn-light btn-lg rounded-pill px-4 btn-animate">
+                          Explore Services <i class="fas fa-arrow-right ms-2"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Main Services Section -->
+      <section class="py-5" id="services">
+          <div class="container">
+              <!-- Featured Services -->
+              <div class="row g-4 mb-5 stagger-animation">
+                  <div class="col-md-6 col-lg-4">
+                      <div class="service-card h-100 p-4 rounded-4 hover-lift">
+                          <div class="service-icon bg-primary bg-opacity-10">
+                              <i class="fas fa-compass fa-2x text-primary"></i>
+                          </div>
+                          <h4 class="h5 mb-3 fw-bold">Admission Guidance</h4>
+                          <p class="text-muted mb-4">Expert guidance on admission processes, requirements, and deadlines.</p>
+                          <ul class="list-unstyled mb-0">
+                              <li class="mb-2">
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Personalized counseling
+                              </li>
+                              <li class="mb-2">
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Application assistance
+                              </li>
+                              <li>
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Document verification
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-4">
+                      <div class="service-card h-100 p-4 rounded-4 hover-lift">
+                          <div class="service-icon bg-success bg-opacity-10">
+                              <i class="fas fa-book-reader fa-2x text-success"></i>
+                          </div>
+                          <h4 class="h5 mb-3 fw-bold">Test Preparation</h4>
+                          <p class="text-muted mb-4">Comprehensive preparation for university admission tests.</p>
+                          <ul class="list-unstyled mb-0">
+                              <li class="mb-2">
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Practice tests
+                              </li>
+                              <li class="mb-2">
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Study materials
+                              </li>
+                              <li>
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Expert mentoring
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-4">
+                      <div class="service-card h-100 p-4 rounded-4 hover-lift">
+                          <div class="service-icon bg-warning bg-opacity-10">
+                              <i class="fas fa-lightbulb fa-2x text-warning"></i>
+                          </div>
+                          <h4 class="h5 mb-3 fw-bold">Career Counseling</h4>
+                          <p class="text-muted mb-4">Professional guidance for choosing the right career path.</p>
+                          <ul class="list-unstyled mb-0">
+                              <li class="mb-2">
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Career assessment
+                              </li>
+                              <li class="mb-2">
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Program selection
+                              </li>
+                              <li>
+                                  <i class="fas fa-check-circle text-success me-2"></i>
+                                  Future planning
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Features Section -->
+              <div class="row align-items-center mb-5">
+                  <div class="col-lg-6 mb-4 mb-lg-0 animate-fade-in">
+                      <h2 class="fw-bold mb-4">Why Choose Our Services?</h2>
+                      <div class="feature-list">
+                          <div class="d-flex align-items-center mb-4">
+                              <div class="feature-icon bg-primary bg-opacity-10">
+                                  <i class="fas fa-check fa-lg text-primary"></i>
+                              </div>
+                              <div>
+                                  <h5 class="mb-1">Expert Guidance</h5>
+                                  <p class="text-muted mb-0">Professional counselors with years of experience</p>
+                              </div>
+                          </div>
+                          <div class="d-flex align-items-center mb-4">
+                              <div class="feature-icon bg-success bg-opacity-10">
+                                  <i class="fas fa-clock fa-lg text-success"></i>
+                              </div>
+                              <div>
+                                  <h5 class="mb-1">24/7 Support</h5>
+                                  <p class="text-muted mb-0">Round-the-clock assistance for all your queries</p>
+                              </div>
+                          </div>
+                          <div class="d-flex align-items-center">
+                              <div class="feature-icon bg-warning bg-opacity-10">
+                                  <i class="fas fa-star fa-lg text-warning"></i>
+                              </div>
+                              <div>
+                                  <h5 class="mb-1">Proven Results</h5>
+                                  <p class="text-muted mb-0">High success rate in university admissions</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Pricing Section -->
+              <div class="text-center mb-5">
+                  <h2 class="fw-bold mb-4 animate-fade-in">Our Packages</h2>
+                  <div class="row stagger-animation">
+                      <div class="col-md-4">
+                          <div class="pricing-card shadow-sm">
+                              <div class="pricing-header text-center">
+                                  <h4 class="mb-3">Basic</h4>
+                                  <h2 class="display-4 fw-bold mb-0">৳2000</h2>
+                                  <p class="text-white-50">per month</p>
+                              </div>
+                              <div class="p-4">
+                                  <ul class="list-unstyled pricing-features">
+                                      <li><i class="fas fa-check text-success me-2"></i>Basic Eligibility Check</li>
+                                      <li><i class="fas fa-check text-success me-2"></i>University Database Access</li>
+                                      <li><i class="fas fa-check text-success me-2"></i>Email Support</li>
+                                  </ul>
+                                  <button class="btn btn-outline-primary w-100 mt-4">Get Started</button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="pricing-card shadow">
+                              <div class="pricing-header text-center">
+                                  <h4 class="mb-3">Premium</h4>
+                                  <h2 class="display-4 fw-bold mb-0">৳5000</h2>
+                                  <p class="text-white-50">per month</p>
+                              </div>
+                              <div class="p-4">
+                                  <ul class="list-unstyled pricing-features">
+                                      <li><i class="fas fa-check text-success me-2"></i>All Basic Features</li>
+                                      <li><i class="fas fa-check text-success me-2"></i>Personal Counseling</li>
+                                      <li><i class="fas fa-check text-success me-2"></i>Test Preparation</li>
+                                      <li><i class="fas fa-check text-success me-2"></i>24/7 Support</li>
+                                  </ul>
+                                  <button class="btn btn-primary w-100 mt-4">Get Started</button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="pricing-card shadow-sm">
+                              <div class="pricing-header text-center">
+                                  <h4 class="mb-3">Ultimate</h4>
+                                  <h2 class="display-4 fw-bold mb-0">৳8000</h2>
+                                  <p class="text-white-50">per month</p>
+                              </div>
+                              <div class="p-4">
+                                  <ul class="list-unstyled pricing-features">
+                                      <li><i class="fas fa-check text-success me-2"></i>All Premium Features</li>
+                                      <li><i class="fas fa-check text-success me-2"></i>Career Counseling</li>
+                                      <li><i class="fas fa-check text-success me-2"></i>Interview Preparation</li>
+                                      <li><i class="fas fa-check text-success me-2"></i>Priority Support</li>
+                                  </ul>
+                                  <button class="btn btn-outline-primary w-100 mt-4">Get Started</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Call to Action -->
+              <div class="text-center">
+                  <div class="p-5 rounded-4 call-to-action bg-dark animate-scale">
+                      <h3 class="fw-bold mb-4 text-light">Embark on Your Academic Adventure</h3>
+                      <p class="lead mb-4 text-light">Transform your educational dreams into reality with our expert guidance and support.</p>
+                      <button class="btn btn-warning btn-lg rounded-pill px-5 py-3 shadow-sm hover-lift">
+                          <i class="fas fa-graduation-cap me-2"></i>
+                          Begin Your Journey
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Footer Section -->
+      <div class="footer_section margin_top90 animate-fade-in">
+         <div class="location_bg">
+            <div class="container">
+               <div class="location_main">
+                  <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-4">
+                     <li>
+                        <a href="#" class="text-decoration-none">
+                           <img src="images/map-icon.png" alt="Location" class="me-2">
+                           <span>Location</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" class="text-decoration-none">
+                           <img src="images/call-icon.png" alt="Call" class="me-2">
+                           <span>Call +01 1234567890</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" class="text-decoration-none">
+                           <img src="images/mail-icon.png" alt="Email" class="me-2">
+                           <span>aravroy2003@gmail.com</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/animations.js"></script>
+      <script>
+        // Initialize stagger animations when they come into view
+        const staggerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    staggerObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.stagger-animation').forEach(element => {
+            staggerObserver.observe(element);
+        });
+
+        // Initialize page transition animations
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('page-transition');
+            setTimeout(() => {
+                document.body.classList.add('visible');
+            }, 100);
+        });
+      </script>
+   </body>
+</html>

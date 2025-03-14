@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>University Admission</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/Admission logo.jpeg" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <style>
+         /* Enhanced Glow Effects */
+         .btn-glow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            position: relative;
+            overflow: hidden;
+         }
+         
+         .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+         }
+
+         .btn-glow::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: glowingEffect 2s infinite;
+         }
+
+         @keyframes glowingEffect {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+         }
+
+         .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+         }
+
+         .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.3);
+         }
+
+         .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transform: translateY(-100%);
+            transition: 0.5s;
+         }
+
+         .feature-card:hover::before {
+            transform: translateY(100%);
+         }
+
+         .university-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+         }
+
+         .university-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
+         }
+
+         .hero_btn-box .btn {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+         }
+
+         .hero_btn-box .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+         }
+
+         .service_section .image_box {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+         }
+
+         .service_section .image_box:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 165, 0, 0.4);
+         }
+
+         .service_section .image_box::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,165,0,0.1), transparent);
+            transform: rotate(45deg);
+            animation: serviceGlow 3s infinite;
+         }
+
+         @keyframes serviceGlow {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+         }
+
+         .navbar-brand {
+            position: relative;
+            overflow: hidden;
+         }
+
+         .navbar-brand::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(99,102,241,0.1), transparent);
+            transform: rotate(45deg);
+            animation: brandGlow 3s infinite;
+         }
+
+         @keyframes brandGlow {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+         }
+
+         .nav-link {
+            position: relative;
+            overflow: hidden;
+         }
+
+         .nav-link:hover {
+            text-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+         }
+
+         .hero-typing {
+            animation: textGlow 2s infinite alternate;
+         }
+
+         @keyframes textGlow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+            to { text-shadow: 0 0 15px rgba(255,255,255,0.8), 0 0 25px rgba(255,255,255,0.6); }
+         }
+
+         .contact_section input, .contact_section textarea {
+            transition: all 0.3s ease;
+         }
+
+         .contact_section input:focus, .contact_section textarea:focus {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px);
+         }
+
+         .location_main li a {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+         }
+
+         .location_main li a:hover {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+         }
+
+         .location_main li a img {
+            transition: all 0.4s ease;
+         }
+
+         .location_main li a:hover img {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+         }
+
+         /* Navigation Bar Optimization */
+         .header_section {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+         }
+
+         .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #6366f1 !important;
+            transition: all 0.3s ease;
+         }
+
+         .navbar-brand:hover {
+            transform: translateY(-2px);
+         }
+
+         .navbar-brand img {
+            transition: all 0.3s ease;
+         }
+
+         .navbar-brand:hover img {
+            transform: rotate(5deg);
+         }
+
+         .nav-item {
+            position: relative;
+            margin: 0 5px;
+         }
+
+         .nav-link {
+            color: #4B5563 !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+            position: relative;
+         }
+
+         .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: linear-gradient(to right, #6366f1, #8b5cf6);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+         }
+
+         .nav-link:hover::after {
+            width: 100%;
+         }
+
+         .nav-link.active {
+            color: #6366f1 !important;
+         }
+
+         .nav-link.active::after {
+            width: 100%;
+         }
+
+         .navbar-nav .nav-link:hover {
+            color: #6366f1 !important;
+            transform: translateY(-2px);
+         }
+
+         .header_section .btn-primary {
+            background: linear-gradient(to right, #6366f1, #8b5cf6);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+         }
+
+         .header_section .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+         }
+
+         @media (max-width: 991.98px) {
+            .navbar-collapse {
+               background: white;
+               padding: 1rem;
+               border-radius: 10px;
+               box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+               margin-top: 1rem;
+            }
+
+            .nav-link::after {
+               display: none;
+            }
+
+            .nav-link:hover {
+               background: rgba(99, 102, 241, 0.1);
+               border-radius: 5px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section animate__animated animate__fadeIn">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-glass">
+               <div class="container">
+                  <a class="navbar-brand d-flex align-items-center animate__animated animate__slideInLeft" href="index.html">
+                     <img src="./images/Admission logo.jpeg" alt="UniCheck Logo" class="img-fluid logo-hover" style="max-height: 45px; transition: transform 0.3s;">
+                     <span class="ms-2 brand-text" style="font-size: 1.5rem; background: linear-gradient(45deg, #2563eb, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">UniCheck</span>
+                  </a>
+                  <button class="navbar-toggler animate__animated animate__fadeIn custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse animate__animated animate__fadeIn" id="navbarSupportedContent">
+                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.1s;">
+                           <a class="nav-link active nav-link-hover" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.2s;">
+                           <a class="nav-link nav-link-hover" href="about.html">Check Eligibility</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.3s;">
+                           <a class="nav-link nav-link-hover" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.4s;">
+                           <a class="nav-link nav-link-hover" href="http://localhost/final%20login/register.php">Sign-up</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown" style="animation-delay: 0.5s;">
+                           <a class="nav-link nav-link-hover" href="http://localhost/final%20login/login.php">Log-in</a>
+                        </li>
+                     </ul>
+                     <div class="d-flex align-items-center animate__animated animate__slideInRight">
+                        <a href="#" class="btn btn-primary btn-glow contact-btn" style="background: linear-gradient(45deg, #2563eb, #3b82f6); border-radius: 25px; padding: 10px 25px;">
+                           <i class="fa fa-phone me-2 animate__animated animate__tada animate__infinite"></i>
+                           <span class="contact-text">Call: +1234567890</span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+      <!-- Hero Section -->
+      <section class="hero_section position-relative">
+         <div class="hero-slider">
+            <div class="slide active">
+               <div class="hero_bg_box">
+                  <img src="/images/University.jpg" alt="University Campus" class="img-fluid">
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="hero-detail-box animate-slide">
+                           <h1 class="hero-typing" data-text="Welcome to UniCheck" style="font-family: 'Playfair Display', serif; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: 3.5rem; letter-spacing: 1px;">Welcome to UniCheck</h1>
+                           <p class="lead" style="font-family: 'Dancing Script', cursive; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); font-size: 2rem;">Your trusted partner in university admissions</p>
+                           <div class="hero_btn-box">
+                              <a href="about.html" class="btn btn-primary btn-animate btn-glow" style="font-family: 'Great Vibes', cursive; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Get Started</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slide">
+               <div class="hero_bg_box">
+                  <img src="/images/Students.jpg" alt="Student Life" class="img-fluid">
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="hero-detail-box animate-slide">
+                           <h1 class="hero-typing" data-text="Welcome to UniCheck" style="font-family: 'Playfair Display', serif; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: 3.5rem; letter-spacing: 1px;">Find Your Perfect University</h1>
+                           <p class="lead" style="font-family: 'Dancing Script', cursive; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); font-size: 2rem;">Discover the best institutions that match your aspirations</p>
+                           <div class="hero_btn-box">
+                              <a href="services.html" class="btn btn-primary btn-animate btn-glow">Explore Options</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slide">
+               <div class="hero_bg_box">
+                  <img src="images/Graduation.jpg" alt="Education" class="img-fluid">
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="hero-detail-box animate-slide">
+                           <h1 class="hero-typing" data-text="Welcome to UniCheck" style="font-family: 'Playfair Display', serif; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: 3.5rem; letter-spacing: 1px;">Your Future Starts Here</h1>
+                           <p class="lead" style="font-family: 'Dancing Script', cursive; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); font-size: 2rem;">Expert guidance for your academic journey</p>
+                           <div class="hero_btn-box">
+                              <a href="contact.html" class="btn btn-primary btn-animate btn-glow">Contact Us</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="slider-controls">
+            <button class="prev-slide" aria-label="Previous slide">
+               <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-slide" aria-label="Next slide">
+               <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="slide-indicators">
+               <button class="indicator active" aria-label="Go to slide 1"></button>
+               <button class="indicator" aria-label="Go to slide 2"></button>
+               <button class="indicator" aria-label="Go to slide 3"></button>
+            </div>
+         </div>
+         <script>
+            // Auto slide functionality
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            function showSlide(index) {
+               slides.forEach(slide => slide.classList.remove('active'));
+               indicators.forEach(indicator => indicator.classList.remove('active'));
+               
+               slides[index].classList.add('active');
+               indicators[index].classList.add('active');
+               currentSlide = index;
+            }
+
+            function nextSlide() {
+               currentSlide = (currentSlide + 1) % slides.length;
+               showSlide(currentSlide);
+            }
+
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 5000);
+         </script>
+      </section>
+      <!-- service section start -->
+      <div class="service_section layout_padding">
+         <div class="container">
+            <h1 class="service_taital">Our Service</h1>
+            <div class="service_section_2 layout_padding">
+               <div class="owl-carousel owl-theme">
+                  <div class="item">
+                     <div class="image_box">
+                        <h2 style="font-size: 50px;color: orange;">50+</h2>
+                     </div>
+                     <h3 class="sound_text">Universities</h3>
+                     <div class="buy_bt"><a href="#">Read More</a></div>
+                  </div>
+                  <div class="item">
+                     <div class="image_box">
+                        <h2 style="font-size: 50px;color: orange;">95%</h2>
+                     </div>
+                     <h3 class="sound_text">Accuracy</h3>
+                     <div class="buy_bt"><a href="#">Read More</a></div>
+                  </div>
+                  <div class="item">
+                     <div class="image_box">
+                        <h2 style="font-size: 50px;color: orange;">24/7</h2>
+                     </div>
+                     <h3 class="sound_text">Support</h3>
+                     <div class="buy_bt"><a href="#">Read More</a></div>
+                  </div>
+                  <div class="item">
+                     <div class="image_box">
+                        <h2 style="font-size: 50px;color: orange;">50+</h2>
+                     </div>
+                     <h3 class="sound_text">Universities</h3>
+                     <div class="buy_bt"><a href="#">Read More</a></div>
+                  </div>
+                  <div class="item">
+                     <div class="image_box">
+                        <h2 style="font-size: 50px;color: orange;">95%</h2>
+                     </div>
+                     <h3 class="sound_text">Accuracy</h3>
+                     <div class="buy_bt"><a href="#">Read More</a></div>
+                  </div>
+                  <div class="item">
+                     <div class="image_box">
+                        <h2 style="font-size: 50px;color: orange;">24/7</h2>
+                     </div>
+                     <h3 class="sound_text">support</h3>
+                     <div class="buy_bt"><a href="#">Read More</a></div>
+                  </div>
+                  <div class="item">
+                     <div class="image_box">
+                        <h2 style="font-size: 50px;color: orange;">95%</h2>
+                     </div>
+                     <h3 class="sound_text">Accuracy</h3>
+                     <div class="buy_bt"><a href="#">Read More</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- service section end -->
+      <!-- about section start -->
+      <div class="about_section layout_padding bg-light">
+         <div class="container">
+             <div class="about_main">
+                 <div class="row justify-content-center mb-5">
+                     <div class="col-lg-8 text-center">
+                         <h1 class="about_taital display-4 fw-bold mb-4 text-primary">Discover Our Story</h1>
+                         <div class="section-divider mb-5 mx-auto" style="width: 80px; height: 4px; background: linear-gradient(to right, #6366f1, #8b5cf6);"></div>
+                     </div>
+                 </div>
+                 <div class="row align-items-center gy-5">
+                     <div class="col-lg-6">
+                         <div class="about-content" data-aos="fade-right">
+                             <div class="section-title mb-4">
+                                 <h2 class="display-5 fw-bold" style="background: linear-gradient(to right, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Shaping Tomorrow's Leaders Today</h2>
+                             </div>
+                             <p class="lead mb-4 text-muted">
+                                 UniCheck is your trusted companion in the journey towards higher education, crafting personalized pathways to Bangladesh's premier institutions.
+                             </p>
+     
+                             <div class="features-grid row g-4">
+                                 <div class="col-md-6">
+                                     <div class="feature-card p-4 rounded-3 h-100" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                         <div class="feature-icon mb-3">
+                                             <i class="fa fa-check-circle fa-2x" style="color: #6366f1;"></i>
+                                         </div>
+                                         <h5 class="feature-title mb-3">Intelligent Matching</h5>
+                                         <p class="feature-text mb-0 text-muted">Advanced algorithms to match your profile with ideal universities.</p>
+                                     </div>
+                                 </div>
+     
+                                 <div class="col-md-6">
+                                     <div class="feature-card p-4 rounded-3 h-100" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                         <div class="feature-icon mb-3">
+                                             <i class="fa fa-database fa-2x" style="color: #8b5cf6;"></i>
+                                             <i class="fa fa-book fa-2x ms-2" style="color: #8b5cf6;"></i>
+                                         </div>
+                                         <h5 class="feature-title mb-3">Rich Resources</h5>
+                                         <p class="feature-text mb-0 text-muted">Extensive database of universities, programs, and admission criteria.</p>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                     <div class="feature-card p-4 rounded-3 h-100" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                         <div class="feature-icon mb-3">
+                                             <i class="fa fa-clock-o fa-2x" style="color: #6366f1;"></i>
+                                         </div>
+                                         <h5 class="feature-title mb-3">Live Updates</h5>
+                                         <p class="feature-text mb-0 text-muted">Instant notifications about deadlines and requirements.</p>
+                                     </div>
+                                 </div>
+     
+                                 <div class="col-md-6">
+                                     <div class="feature-card p-4 rounded-3 h-100" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                         <div class="feature-icon mb-3">
+                                             <i class="fa fa-user fa-2x" style="color: #8b5cf6;"></i>
+                                         </div>
+                                         <h5 class="feature-title mb-3">Custom Guidance</h5>
+                                         <p class="feature-text mb-0 text-muted">Personalized advice based on your unique academic journey.</p>
+                                     </div>
+                                 </div>
+                             </div>
+     
+                             <div class="mt-5">
+                                 <a href="#" class="btn btn-lg rounded-pill px-5 btn-glow" style="background: linear-gradient(to right, #6366f1, #8b5cf6); color: white;">Explore More</a>
+                             </div>
+                         </div>
+                     </div>
+     
+                     <div class="col-lg-6">
+                         <div class="about-image-container" data-aos="fade-left">
+                             <div class="row g-4">
+                                 <div class="col-12">
+                                     <img src="https://th.bing.com/th/id/OIP.D7BAhrykHrJJN5NlZOt06wHaE8?w=285&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7" 
+                                          alt="Students in campus" 
+                                          class="img-fluid rounded-3" style="box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s;">
+                                 </div>
+                                 <div class="col-12">
+                                     <img src="https://th.bing.com/th/id/OIP.8RSCMWErBRLOlr7EDjKK_gHaD8?w=303&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" 
+                                          alt="University campus" 
+                                          class="img-fluid rounded-3" style="box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s;">
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>        
+             </div>
+         </div>
+      </div>
+      <!-- about section end -->
+      <!-- price section start -->
+      <div class="price_section layout_padding">
+         <div class="container">
+            <div class="text-center mb-5">
+               <h1 class="price_taital">Universities</h1>
+            </div>
+            <div class="row g-4">
+               <div class="col-md-6">
+                  <div class="university-card h-100 shadow-sm rounded-3 overflow-hidden">
+                     <h3 class="university-title p-3 mb-0 bg-light">BUET</h3>
+                     <div class="university-image position-relative" style="cursor: pointer" onclick="window.location.href='https://www.buet.ac.bd/web/#/'">
+                        <img src="/images/buet.jpg" alt="BUET Campus" class="img-fluid w-100">
+                        <div class="d-grid p-3">
+                           <a href="#" class="btn btn-primary btn-glow">Join Now</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="university-card h-100 shadow-sm rounded-3 overflow-hidden">
+                     <h3 class="university-title p-3 mb-0 bg-light">Dhaka Medical</h3>
+                     <div class="university-image position-relative" style="cursor: pointer" onclick="window.location.href='https://dmc.gov.bd/'">
+                        <img src="images/dmc.jpg" alt="Dhaka Medical Campus" class="img-fluid w-100">
+                        <div class="d-grid p-3">
+                           <a href="#" class="btn btn-primary btn-glow">See More</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- price section end -->
+  
+      <!-- contact section start -->
+      <div class="contact_section layout_padding" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+         <div class="container">
+            <div class="text-center mb-5 animate__animated animate__fadeIn">
+               <h1 class="contact_taital display-4 fw-bold" style="color: #1e293b; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Get In Touch</h1>
+               <p class="text-muted">We'd love to hear from you. Send us a message!</p>
+            </div>
+            <div class="row justify-content-center">
+               <div class="col-lg-8">
+                  <div class="card border-0 shadow-lg rounded-4 p-4" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px);">
+                     <div class="card-body">
+                        <form action="/action_page.php" class="needs-validation" novalidate>
+                           <div class="form-floating mb-4">
+                              <input type="text" class="form-control border-0 shadow-sm" id="name" placeholder="Name" name="Name" required 
+                                    style="background: rgba(255,255,255,0.8); transition: all 0.3s ease;">
+                              <label for="name">Full Name</label>
+                           </div>
+                           <div class="form-floating mb-4">
+                              <input type="tel" class="form-control border-0 shadow-sm" id="phone" placeholder="Phone Number" name="Phone Number" required
+                                    style="background: rgba(255,255,255,0.8); transition: all 0.3s ease;">
+                              <label for="phone">Phone Number</label>
+                           </div>
+                           <div class="form-floating mb-4">
+                              <input type="email" class="form-control border-0 shadow-sm" id="email" placeholder="Email" name="Email" required
+                                    style="background: rgba(255,255,255,0.8); transition: all 0.3s ease;">
+                              <label for="email">Email Address</label>
+                           </div>
+                           <div class="form-floating mb-4">
+                              <textarea class="form-control border-0 shadow-sm" placeholder="Message" id="message" name="Message" 
+                                       style="height: 150px; background: rgba(255,255,255,0.8); transition: all 0.3s ease;" required></textarea>
+                              <label for="message">Your Message</label>
+                           </div>
+                           <div class="text-center">
+                              <button type="submit" class="btn btn-primary btn-lg btn-glow px-5" 
+                                      style="background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); border: none;">
+                                 <i class="fa fa-paper-plane me-2"></i>Send Message
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact section end -->
+      <!-- footer section start -->
+      <div class="footer_section py-5" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); position: relative; overflow: hidden;">
+         <!-- Animated background elements -->
+         <div class="position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 1;">
+            <div class="position-absolute" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%); top: -150px; left: -150px; animation: float 8s infinite ease-in-out;"></div>
+            <div class="position-absolute" style="width: 200px; height: 200px; background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%); bottom: -100px; right: -100px; animation: float 6s infinite ease-in-out;"></div>
+         </div>
+         <div class="container position-relative" style="z-index: 2;">
+            <div class="row justify-content-center">
+               <div class="col-lg-8">
+                  <div class="contact-info-wrapper text-center">
+                     <div class="row g-4">
+                        <div class="col-md-4">
+                           <div class="contact-item animate__animated animate__fadeInUp" style="animation-delay: 0.1s; background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(99,102,241,0.3); border-radius: 20px; padding: 25px; height: 180px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(99,102,241,0.2)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                              <div class="icon-wrapper mb-3">
+                                 <i class="fas fa-map-marker-alt fa-2x" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                                 <i class="fas fa-compass fa-2x ms-2" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                                 <i class="fas fa-globe-americas fa-2x ms-2" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                              </div>
+                              <h5 class="text-white mb-2" style="font-weight: 600;">Our Location</h5>
+                              <p class="mb-0" style="color: #a5b4fc;">Chattogram</p>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="contact-item animate__animated animate__fadeInUp" style="animation-delay: 0.2s; background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(99,102,241,0.3); border-radius: 20px; padding: 25px; height: 180px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(99,102,241,0.2)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                              <div class="icon-wrapper mb-3">
+                                 <i class="fas fa-phone-alt fa-2x" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                                 <i class="fas fa-mobile-alt fa-2x ms-2" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                                 <i class="fas fa-headset fa-2x ms-2" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                              </div>
+                              <h5 class="text-white mb-2" style="font-weight: 600;">Call Us</h5>
+                              <p class="mb-0" style="color: #a5b4fc;">+0123456789</p>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="contact-item animate__animated animate__fadeInUp" style="animation-delay: 0.3s; background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(99,102,241,0.3); border-radius: 20px; padding: 25px; height: 180px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(99,102,241,0.2)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                              <div class="icon-wrapper mb-3">
+                                 <i class="fas fa-envelope fa-2x" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                                 <i class="fas fa-paper-plane fa-2x ms-2" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                                 <i class="fas fa-inbox fa-2x ms-2" style="color: #818cf8; filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));"></i>
+                              </div>
+                              <h5 class="text-white mb-2" style="font-weight: 600;">Email Us</h5>
+                              <p class="mb-0" style="color: #a5b4fc;">ASP@gmail.com</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section" style="background: rgba(15,23,42,0.95); border-top: 1px solid rgba(99,102,241,0.2); backdrop-filter: blur(10px);">
+         <div class="container">
+            <p class="copyright_text" style="color: #818cf8; font-weight: 500; letter-spacing: 0.5px;">© Team ASP <span style="opacity: 0.7;">|</span> <span style="font-size: 0.9em; opacity: 0.8;">Making Dreams Come True</span></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script>
+         $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:35,
+            nav:true,
+            center: true,
+            responsive:{
+             0:{
+                 items:1,
+                    margin:0
+                  },
+                575:{
+                    items:1,
+                    margin:0
+                },
+                768:{
+                    items:3,
+                    margin:0
+                },
+                1000:{
+                    items:3
+                }
+            }
+         })   
+      </script>   
+   </body>
+</html>
